@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/cd555a857e.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css" />
+  <title>Music Player</title>
+</head>
+
+<body>
+
+
+
+  <div class="music-container " id="music-container">
+
+
+    <audio src="" id="audio"></audio>
+
+    <div class="navigation">
+      <div>
+        <button id="prev" class="action-btn action-btn-prev">
+          <i class="fas fa-backward"></i>
+        </button>
+        <button id="play" class="action-btn aciton-btn-big ">
+          <i class="fas fa-play"></i>
+        </button>
+        <button id="next" class="action-btn action-btn-next">
+          <i class="fas fa-forward"></i>
+        </button>
+      </div>
+      <button id="random" class="action-btn action-btn-random ">
+        <i class="fas fa-random"></i>
+      </button>
+    </div>
+
+    <div class="music-info ">
+      <div>
+        <p id="songs-numbers"></p>
+        <h4 id="title"> Somthing</h4>
+      </div>
+
+      <img src="" alt="cover" id="cover">
+
+
+    </div>
+
+
+    <div class="progress-contaier" id="progress-container">
+      <div class="progress" id="progress"></div>
+    </div>
+    <div class="slidecontainer">
+      <span id="mute"> <i class="fas fa-volume-mute"></i></span>
+
+      <input type="range" min="1" max="100" value="100" class="slider" id="myRange">
+      <span id="full-volume"> <i class="fas fa-volume-up"></i></span>
+    </div>
+
+    <div id="telem-img">
+      <img src="images/corona.png" alt="">
+    </div>
+  </div>
+
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -219,6 +219,9 @@ body {
   ;
 }
 
+.white-color {
+  color: white;
+}
 
 /* .active-slider #volime-value {
   transform: translateY(0);
@@ -237,4 +240,35 @@ body {
   100% {
     transform: rotate(35deg);
   }
+}
+
+@media screen and (max-width : 768px) {
+
+  .music-container {
+    height: 300px;
+    width: 300px;
+  }
+
+  .music-info {
+    padding: 0.25rem .2rem;
+  }
+
+  .navigation .action-btn i {
+    margin-top: -5px
+  }
+
+
+  .progress-contaier {
+    margin: 5px;
+  }
+
+  .slidecontainer div:first-child {
+    margin-top: -5px;
+  }
+
+  #telem-img img {
+    height: 200px;
+    right: 25%;
+  }
+
 }

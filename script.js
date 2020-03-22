@@ -33,7 +33,7 @@ slider.oninput = function () {
 
 mute.addEventListener("click", () => {
 
-
+  mute.classList.toggle("white-color")
   if (audio.volume !== 0) {
     // if the vlolime is difrrent then 0
     currentvolume = slider.value

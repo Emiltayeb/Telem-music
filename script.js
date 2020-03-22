@@ -79,20 +79,27 @@ function fullvolumeUp() {
 }
 mute.addEventListener("click", () => {
 
-  mute.classList.toggle("white-color")
+
 
   if (audio.volume !== 0) {
     // if the vlolime is difrrent then 0
+    fullvolume.classList.remove("white-color")
+    mute.classList.add("white-color")
     currentvolume = slider.value
     audio.volume = 0;
 
   } else {
+
     // if the voliume is 0
     // נעצור את האנמציה
     // put vlomue wherver the last volume was
     console.log(currentvolume);
     audio.volume = currentvolume / 100
-
+    if (currentvolume == 100) {
+      fullvolume.classList.add("white-color")
+    }
+    mute.classList.remove("white-color")
+    slider.value = audio.volume
   }
 
   volumeDisplay.textContent = `${Math.floor(audio.volume*100)}%`

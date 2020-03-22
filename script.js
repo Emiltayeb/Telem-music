@@ -111,7 +111,7 @@ fullvolume.addEventListener("click", () => {
 })
 
 
-let songindex = 96 //האינדקס שממנו נתחיל
+let songindex = 0 //האינדקס שממנו נתחיל
 let shuffelCounter = 0;
 // מעלים את השירים
 loadsongs(songs[songindex])

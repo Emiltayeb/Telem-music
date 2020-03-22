@@ -24,7 +24,11 @@ slider.oninput = function () {
 }
 
 mute.addEventListener("click", () => {
-  audio.volume = 0
+
+
+  audio.volume !== 0 ? audio.volume = 0 : audio.volume = currentvolume;
+
+  console.log(audio.volume)
 })
 
 fullvolume.addEventListener("click", () => {

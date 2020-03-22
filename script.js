@@ -16,50 +16,7 @@ const output = document.getElementById("demo");
 const fullvolume = document.getElementById("full-volume")
 const mute = document.getElementById("mute")
 const volumeDisplay = document.getElementById("volime-value")
-var currentvolume = (audio.volume * 100);
-console.log(currentvolume);
-slider.oninput = function () {
-  console.log(this.value)
-  currentvolume = (this.value / 100)
-  audio.volume = currentvolume
-  volumeDisplay.textContent = `${Math.floor(audio.volume*100)}%`
-
-}
-
-// slider.addEventListener("onmouseup", () => {
-//   document.getElementsByClassName("slidecontainer")[0].classList.toggle("active-slider");
-//   console.log("here");
-// })
-
-mute.addEventListener("click", () => {
-
-  mute.classList.toggle("white-color")
-  if (audio.volume !== 0) {
-    // if the vlolime is difrrent then 0
-    currentvolume = slider.value
-    audio.volume = 0;
-
-  } else {
-    // if the voliume is 0
-
-    // put vlomue wherver the last volume was
-    console.log(currentvolume);
-    audio.volume = currentvolume / 100
-
-  }
-
-  volumeDisplay.textContent = `${Math.floor(audio.volume*100)}%`
-
-  slider.value = audio.volume * 100
-
-  console.log(audio.volume)
-})
-
-fullvolume.addEventListener("click", () => {
-
-  audio.volume = slider.value / 100
-})
-
+var currentvolume = slider.value;
 const songs = [
   "Amy Winehouse - Tears Dry On Their Own",
   "bee gees- stayin' alive",
@@ -91,6 +48,69 @@ const songs = [
   "Cardi B - Bodak Yellow", "Dennis Lloyd - Never Go Back", "Ed Sheeran - Galway Girl", "Ed Sheeran - The A Team", "Harry Styles - Lights Up", "Little Big - Uno", "Lizzo - Good As Hell", "Post Malone -Stay", "Toto - Africa", "Travis Scott - SICKO MODE ft. Drake", "Vance Joy - Fire and the Flood", "אביתר בנאי - כלום לא עצוב", "איתי לוי - קירות", "אליעד - מסע (אקוסטי)", "גידי גוב -בלעדייך", "הפרויקט של עידן רייכל - מנעי קולך מבכי", "חנן בן ארי - אלוף העולם", "חנן בן ארי - אם תרצי", "ישי ריבו - תוכו רצוף אהבה", "עדן חסון - שמישהו יעצור אותי", "עידן רייכל - גלגל מסתובב", "עידן רייכל - לפני שייגמר", "רביד פלוטניק - בור ועם הארץ (מארח את טונה)", "שירי מרפסת -ישראל", "שם טוב לוי, ואפרים שמיר - הידעת את הדרך", "Alice Merton - No Roots", "Alt-J  - Matilda", "Alt-J - Taro", "Bobby Brown - Every Little Step", "Fall Out Boy - HOLD ME TIGHT OR DON’T", "Feker Libi-עדן אלנה", "Fkj & Masego - Tadow", "Giant Heart - theAngelcy", "Lola Marsh - Only For A Moment", "LSD - Thunderclouds ft. Sia, Diplo, Labrint", "Mac Miller - Good News", "Michael Bublé - Haven't Met You Yet", "Michael Buble - Quando Quando (Feat. Nelly Furtado)", "Michael Kiwanuka - Cold Little Heart", "Simple Plan - Everything Sucks", "Skeeter Davis - The End of The World", "The Strokes - Bad Decisions", "אריק אניישטין-קילפתי תפוז", "בניה ברבי - במקום הכי רחוק", "ג׳יין בורדו - זה עוד לא אבוד", "דנה עדיני ודניאל סלומון - רבות הדרכים - גרסת הקורונה", "הפרויקט של עידן רייכל - בקרוב", "הפרויקט של עידן רייכל - שושנים עצובות", "חנן בן ארי - מה אתה רוצה ממני", "יובל דיין - תשאל את המים", "ישי ריבו - מטבע הדברים", "עקיבא - פשוטים", "שלומי שבת ואליעד - מורידים את הירח", "Alice Merton - No Roots", "Arizona Zervas - ROXANNE", "Coco Jambo- Mr. President", "Doja Cat - Say So", "Fkj & Tom Misch - Losing My Way", "Full Trunk ft. Sivan Talmor - As a stone", "Golden Slumbers+ Carry That Weight+The End - The Beatles", "Jake Bugg - Broken", "Love & Hate -Michael Kiwanuka", "MIKA - Relax, Take It Easy", "Oasis - Wonderwall", "R.E.M. - Losing My Religion", "Red Hot Chili Peppers - Californication", "Red Hot Chili Peppers - Under The Bridge", "Rihanna - Love On The Brain", "Somewhere Over The Rainbow - Israel Kamakawiwo'Ole", "Static & Ben El, Pitbull - Further Up", "TASH SULTANA - JUNGLE", "theAngelcy - The Call", "Train - 50 Ways To Say Goodbye", "בניה ברבי - מישהו איתי כאן", "הפרויקט של עידן רייכל - Todas las Palabras", "טונה - אוח (עם אחשתיים)", "עטר מיינר - פרפר (עם דור3 ועדן דרסו)", "עטר מיינר ויובל שם טוב - הדרך שלי", "קפה שחור חזק ואלון אולארצ'יק - בתוך ענייך", "רביד פלוטניק - נענע", "תומר יוסף - אל תטוסי"
 
 ]
+// console.log(currentvolume);
+
+slider.oninput = function () {
+  console.log(this.value)
+  slider.value == 0 ? mute.classList.add("white-color") : mute.classList.remove("white-color"), fullvolume.classList.remove("white-color");
+
+  if (slider.value == 100) {
+    fullvolume.classList.add("white-color")
+  }
+  currentvolume = (this.value / 100)
+  audio.volume = currentvolume
+  volumeDisplay.textContent = `${Math.floor(audio.volume*100)}%`
+
+}
+
+// slider.addEventListener("onmouseup", () => {
+//   document.getElementsByClassName("slidecontainer")[0].classList.toggle("active-slider");
+//   console.log("here");
+// })
+
+function fullvolumeUp() {
+
+  // שנעביר שיר ראשית נבדוק אם כפתור המיוט עדיין פעל
+  //במידה וכן לא נרצה להסיר את העובדה שהוא לחוץ
+  slider.value == 0 ? mute.classList.add("white-color") : mute.classList.remove("white-color")
+
+
+  audio.volume = (slider.value / 100)
+}
+mute.addEventListener("click", () => {
+
+  mute.classList.toggle("white-color")
+
+  if (audio.volume !== 0) {
+    // if the vlolime is difrrent then 0
+    currentvolume = slider.value
+    audio.volume = 0;
+
+  } else {
+    // if the voliume is 0
+    // נעצור את האנמציה
+    // put vlomue wherver the last volume was
+    console.log(currentvolume);
+    audio.volume = currentvolume / 100
+
+  }
+
+  volumeDisplay.textContent = `${Math.floor(audio.volume*100)}%`
+
+  slider.value = audio.volume * 100
+
+  console.log(audio.volume)
+})
+
+fullvolume.addEventListener("click", () => {
+
+  mute.classList.remove("white-color")
+  audio.volume = 1
+  slider.value = 100
+  volumeDisplay.textContent = `${Math.floor(audio.volume*100)}%`
+})
+
+
 let songindex = 0 //האינדקס שממנו נתחיל
 let shuffelCounter = 0;
 // מעלים את השירים
@@ -108,6 +128,9 @@ function loadsongs(songTitle) {
 
   console.log(songindex);
 
+  if (slider.value == 100) {
+    fullvolume.classList.add("white-color")
+  }
 }
 
 //לחיצה על הפליי
@@ -188,6 +211,7 @@ function nextSong() {
     //נעלה את השירים אם הפרמטרים החדשים
   }
 
+  fullvolumeUp()
   loadsongs(songs[songindex])
   //נקרא לפונקציה שננגן את השיר
   playmode()
@@ -205,6 +229,7 @@ function prevsong() {
   if (songindex <= 0) {
     songindex = 0
   }
+  fullvolumeUp()
   loadsongs(songs[songindex])
   playmode()
 

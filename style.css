@@ -7,10 +7,11 @@
 }
 
 body {
-  font-family: 'Rubik', sans-serif;
-  background-image: linear-gradient(0deg,
+  font-family: "Rubik", sans-serif;
+  /* background-image: linear-gradient(0deg,
       rgb(83, 157, 157) 23.8%,
-      rgb(12, 1, 1)92%);
+      rgb(12, 1, 1)92%); */
+  background-color: #ffde22;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -26,16 +27,16 @@ body {
   right: -80px;
   height: 230px;
   z-index: -1;
-
 }
 
 .music-container {
-  background-color: #1BE68D;
+  background-color: #51d0de;
 
   height: 350px;
   width: 400px;
   padding: 2rem;
   border-radius: 15px 25px 25px 15px;
+  box-shadow: 10px 15px 1px #bf4aa8;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -53,10 +54,10 @@ body {
   width: 100%;
 
   text-align: center;
-  background-color: #FFEC94;
+  /* background-color: #ffec94; */
 
   border-radius: 15px 25px 25px 15px;
-  padding: .75rem .4rem;
+  padding: 0.75rem 0.4rem;
   position: relative;
 }
 
@@ -65,13 +66,11 @@ body {
 }
 
 .music-info h4 {
-  font-size: 1rem;
+  color: #e62739;
 
+  margin-right: 5px;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 }
-
-
-
-
 
 .navigation {
   display: grid;
@@ -94,16 +93,15 @@ body {
 }
 
 .action-btn i {
-  color: black;
+  color: #e62739;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
   border-radius: 50%;
   cursor: pointer;
-
 }
 
 #songs-numbers {
-  font-size: .75rem;
-  margin-bottom: .5rem;
-
+  font-size: 0.75rem;
+  margin-bottom: 0.5rem;
 }
 
 #random {
@@ -112,6 +110,7 @@ body {
 
 .shuffel-on i {
   color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .action-btn-prev,
@@ -140,8 +139,8 @@ body {
 
 .progress-contaier .progress {
   cursor: pointer;
-  background-color: rgba(143, 148, 146, 0.278);
-  border: rgba(0, 0, 0, 0.211) .5px solid;
+  background-color: #ff5e6c;
+  border: rgba(0, 0, 0, 0.211) 0.5px solid;
   width: 0%;
   height: 100%;
   border-radius: 5px;
@@ -167,7 +166,7 @@ body {
   cursor: pointer;
   background-color: transparent;
   border-radius: 50%;
-  padding: .3rem;
+  padding: 0.3rem;
 }
 
 .slider {
@@ -184,9 +183,9 @@ body {
   outline: none;
   margin: 0 20px;
   /* Set transparency (for mouse-over effects on hover) */
-  -webkit-transition: .2s;
+  -webkit-transition: 0.2s;
   /* 0.2 seconds transition on hover */
-  transition: opacity .2s;
+  transition: opacity 0.2s;
 }
 
 .slider::-webkit-slider-thumb {
@@ -198,7 +197,7 @@ body {
   height: 13px;
   border-radius: 50%;
   /* Slider handle height */
-  background: #4CAF50;
+  background: #4caf50;
   /* Green background */
   cursor: pointer;
   /* Cursor on hover */
@@ -209,7 +208,7 @@ body {
   /* Set a specific slider handle width */
   height: 25px;
   /* Slider handle height */
-  background: #4CAF50;
+  background: #4caf50;
   /* Green background */
   cursor: pointer;
   /* Cursor on hover */
@@ -220,16 +219,14 @@ body {
   opacity: 0;
   transition: transform 0.5s ease-in, opacity 0.5s ease-in; */
   color: white;
-  ;
 }
 
 .white-color i {
   color: rgb(255, 149, 10);
   background-color: white;
-  transition: all .2s ease-in;
+  transition: all 0.2s ease-in;
   transform: scale(1.3);
 }
-
 
 /* .active-slider #volime-value {
   transform: translateY(0);
@@ -250,21 +247,19 @@ body {
   }
 }
 
-@media screen and (max-width : 768px) {
-
+@media screen and (max-width: 768px) {
   .music-container {
     height: 300px;
     width: 300px;
   }
 
   .music-info {
-    padding: 0.25rem .2rem;
+    padding: 0.25rem 0.2rem;
   }
 
   .navigation .action-btn i {
-    margin-top: -5px
+    margin-top: -5px;
   }
-
 
   .progress-contaier {
     margin: 5px;
@@ -278,5 +273,4 @@ body {
     height: 200px;
     right: 25%;
   }
-
 }

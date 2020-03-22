@@ -105,6 +105,7 @@ mute.addEventListener("click", () => {
 fullvolume.addEventListener("click", () => {
 
   mute.classList.remove("white-color")
+  fullvolume.classList.add("white-color")
   audio.volume = 1
   slider.value = 100
   volumeDisplay.textContent = `${Math.floor(audio.volume*100)}%`

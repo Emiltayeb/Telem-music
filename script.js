@@ -15,18 +15,42 @@ const slider = document.getElementById("myRange");
 const output = document.getElementById("demo");
 const fullvolume = document.getElementById("full-volume")
 const mute = document.getElementById("mute")
-var currentvolume;
-
+const volumeDisplay = document.getElementById("volime-value")
+var currentvolume = (audio.volume * 100);
+console.log(currentvolume);
 slider.oninput = function () {
   console.log(this.value)
   currentvolume = (this.value / 100)
   audio.volume = currentvolume
+  volumeDisplay.textContent = `${Math.floor(audio.volume*100)}%`
+
 }
+
+// slider.addEventListener("onmouseup", () => {
+//   document.getElementsByClassName("slidecontainer")[0].classList.toggle("active-slider");
+//   console.log("here");
+// })
 
 mute.addEventListener("click", () => {
 
 
-  audio.volume !== 0 ? audio.volume = 0 : audio.volume = currentvolume;
+  if (audio.volume !== 0) {
+    // if the vlolime is difrrent then 0
+    currentvolume = slider.value
+    audio.volume = 0;
+
+  } else {
+    // if the voliume is 0
+
+    // put vlomue wherver the last volume was
+    console.log(currentvolume);
+    audio.volume = currentvolume / 100
+
+  }
+
+  volumeDisplay.textContent = `${Math.floor(audio.volume*100)}%`
+
+  slider.value = audio.volume * 100
 
   console.log(audio.volume)
 })

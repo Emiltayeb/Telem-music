@@ -1,10 +1,12 @@
-## Music Player
+# TelemMusic Player
 
-Create beautiful UI to play music stored in the "music folder" using the HTML5 audio API
+[TeleMusic](https://emiltayeb.github.io/Telem-music/) was created for students around the globe, as a side project.
 
-## Project Specifications
+## What can be done in the music player?
 
-- Create UI for music player including spinning image and song detail popup
 - Add play and pause functionality
 - Switch songs
 - Progress bar
+- Shuffle songs
+
+follow me on [linkedin](https://www.linkedin.com/in/emil-tayeb/)
